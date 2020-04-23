@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git Commands</title>
+<meta name="description" content="Git Commands">
+<link rel="stylesheet" href="css/style.css" Content="text/html;charset=utf-8" media="all" />
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+<script src="js/prettify.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+<div class="container">
+  <center><h1>Git Commands</h1></center>
+<p class="note"></p>
+<h2>Basics</h2>
+
+<ul class="sheet">
+<li>
+<h3>Setup</h3>
+<pre class="prettyprint lang-git">
+# Initial global setup on system
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --global color.ui true
+git config --global core.autocrlf true
+</pre>
+</li>
+
+<li>
+<h3>Create</h3>
+<pre class="prettyprint lang-git">## From data/local directory
+# Initialize git
+git init
+# Add remote url
+git remote add origin https://HOST.COM/USERNAME/REPOSITORY.git
+# Add all files
+git add .
+# Commit all
+git commit -m "Initial commit"
+# Push to remote
+git push -u origin BRANCH
+
+## From repo/remote url
+# Clone repository
+git clone https://HOST.COM/USERNAME/REPOSITORY.git
+# Create/Add files into the cloned directory
+# Add all files
+git add .
+# Commit all
+git commit -m "Initial commit"
+# Push to remote
+git push -u origin BARNCH
+</pre>
+</li>
+  
+<li>
+<h3>Browse</h3>
+<pre class="prettyprint lang-git">
+# View changed files
+git status
+# View History
+git log
+# View modified files
+git log --stat
+# View commits in one line format
+git log --oneline
+# Who made changes
+git blame FILE
+# View changes
+git diff
+# View changes between commits
+git diff ID1 ID2
+# View changes between branches
+git diff BRANCH1 BRANCH2
+# View changed files between branches
+git diff --name-status BRANCH1 BRANCH2
+</pre>
+</li>
+
+<li>
+<h3>Update</h3>
+<pre class="prettyprint lang-git">
+# Fetch
+git fetch BRANCH
+# Fetch and merge
+git pull BRANCH
+# Push changes to remote
+git push origin BRANCH
+# Force push changes to remote
+git push -f origin BRANCH
+</pre>
+</li>
+
+<li>
+<h3>Branch</h3>
+<pre class="prettyprint lang-git">
+# View branches
+git branch
+# Create branch
+git checkout -b BRANCH
+# Switch between branches
+git checkout BRANCH
+# Merge a branch into the active branch
+git merge BRANCH2
+# Delete local branch
+git branch -d BRANCH
+# Delete remote branch
+git push origin --delete BRANCH
+</pre>
+</li>
+
+<li>
+<h3>Local work</h3>
+<pre class="prettyprint lang-git">
+# Stage files
+git add FILE
+# Stage directory
+git add DIRECTORY
+# Stage all
+git add .
+# Commit files
+git commit FILE -m "commit message"
+# Commit all tracked files
+git commit -a -m "commit message"
+# Edit last commit message
+git commit --amend
+</pre>
+</li>
+
+<li>
+<h3>Reset</h3>
+<pre class="prettyprint lang-git">
+# Unstage file
+git reset -- FILE
+# Unstage all
+git reset
+# Untrack file
+git rm --cached FILE
+# Untrack directory
+git rm -r --cached DIRECTORY
+# Revert to last commit
+git reset --hard HEAD^
+# Revert to specific commit
+git reset --hard COMMIT_ID
+# Reset file
+git checkout -- FILE
+</pre>
+</li>
+
+<li>
+<h3>Stash</h3>
+<pre class="prettyprint lang-git">
+# Save a stash
+git stash
+# View stashes
+git stash list
+# Apply stash
+git stash apply NUMBER
+# Apply and remove
+git stash pop NUMBER
+# Clear all stashes
+git stash clear
+</pre>
+</li>
+
+<li>
+<h3>Tag</h3>
+<pre class="prettyprint lang-git">
+# List all tags
+git tag
+# Tag a commit
+git tag -a 1.2 -m "stable version"
+# Push tag to remote
+git push origin TAGNAME
+# Delete local tag
+git tag --delete TAGNAME
+# Delete remote tag
+git push --delete origin TAGNAME
+</pre>
+</li>
+</ul>
+
+<br>
+<h2>Advanced</h2>
+
+<ul class="sheet">
+<li>
+<h3>Aliases</h3>
+<pre class="prettyprint lang-git">
+# Configuration format
+git config --global alias.co "checkout"
+
+co "checkout"
+df "diff"
+ci "commit"
+      
+# Usage
+git co BRANCH
+</pre>
+</li>
+
+<li>
+<h3>Miscellaneous</h3>
+<pre class="prettyprint lang-git">
+# Store credentials for http url
+git config credential.helper store
+# Change remote url
+git remote set-url origin https://HOST.COM/USERNAME/REPOSITORY.git
+# Archive into a zip file
+git archive --format zip --output file.zip BRANCH
+# Ignore file mode changes
+git config core.fileMode false
+</pre>
+</li> 
+
+<li>
+<h3>Links</h3>
+<pre class="prettyprint lang-git">
+# Generate .gitignore file
+<a href="https://www.gitignore.io/" target="_blank">www.gitignore.io</a>
+</pre>
+</li> 
+
+</ul>
+</div>
+
+<footer>
+  <footer><a href="https://github.com/rt1d6m7/gitcom" title=" Hosted on GitHub"><img src="img/github.png" height="26" width="26"></a></footer>
+</footer>
+</body>
+</html>
