@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Ubuntu Mono', monospace;
-  background-color:#333;
+  background-color:#202020;
   color: #ddd;
   font-size: 14px;
 }
@@ -127,7 +127,7 @@ ul.sheet > li {
 footer {
   margin: auto;
   text-align: center;
-  background: #333333;
+  background: #202020;
   color: #fff;
   padding-bottom: 10px;
   padding-top: 30px;
